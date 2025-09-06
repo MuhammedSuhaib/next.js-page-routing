@@ -2,8 +2,8 @@
 import Link from "next/link";
 export default function TeamPage() {
   async function handleAdd() {
-    let num1 = prompt("Enter Num 1");
-    let num2 = prompt("Enter Num 2");
+    const num1 = prompt("Enter Num 1");
+    const num2 = prompt("Enter Num 2");
     const res = await fetch(`http://localhost:8000/add?a=${num1}&b=${num2}`);
     const data = await res.json();
     alert(data.result);
