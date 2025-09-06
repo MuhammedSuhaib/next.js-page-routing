@@ -1,10 +1,16 @@
-import React from "react";
+"use client";
 import Link from "next/link";
-
 export default function TeamPage() {
+  async function handleAdd() {
+    let num1 = prompt("Enter Num 1");
+    let num2 = prompt("Enter Num 2");
+    const res = await fetch(`http://localhost:8000/add?a=${num1}&b=${num2}`);
+    const data = await res.json();
+    alert(data.result);
+  }
   return (
     <>
-      <nav >
+      <nav>
         <Link href="/">
           <button>Back to Home</button>
         </Link>
@@ -12,17 +18,16 @@ export default function TeamPage() {
       </nav>
       <h1 style={{ color: "aquamarine" }}> Team Page </h1>
       <br />
-      
-        
-      
+
       <div style={{ textAlign: "center" }}>
-      <h2 >Meet Our Team</h2>
+        <h2>Meet Our Team</h2>
+        <br />
+        <p>
+          We have a dedicated team of professionals working towards excellence.
+        </p>
+      </div>
       <br />
-      <p>We have a dedicated team of professionals working towards excellence.</p>
-    </div>
-    
-      
-    
+      <button onClick={handleAdd}>Add Two Numbers</button>
     </>
   );
 }
