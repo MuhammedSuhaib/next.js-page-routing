@@ -11,6 +11,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/add")
+@app.get("/api")
 def add(a: int, b: int):
     return {"result": a + b}
