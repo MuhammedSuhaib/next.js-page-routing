@@ -4,7 +4,7 @@ export default function TeamPage() {
   async function handleAdd() {
     const num1 = prompt("Enter Num 1");
     const num2 = prompt("Enter Num 2");
-    const res = await fetch("http://localhost:8000/api/?a=" + num1 + "&b=" + num2);
+    const res = await fetch("https://fast-api-alpha-pearl.vercel.app/?a=" + num1 + "&b=" + num2);
     const data = await res.json();
     alert(data.result);
   }
